@@ -156,21 +156,19 @@ if [ "$OS" -eq 10 ]; then
 	sudo mount /dev/vda3 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 	cp -f /tmp/net.bat net.bat
-	clear
+	
 
 elif [ "$OS" -eq 11 ]; then
 	sudo ntfsfix /dev/vda3
 	sudo mount /dev/vda3 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup/
 	cp -f /tmp/net.bat net.bat
-	clear
 
 else
     sudo ntfsfix /dev/vda1
 	sudo mount /dev/vda1 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 	cp -f /tmp/net.bat net.bat
-	clear
 fi
 
 echo -e "[ ${GREEN}INFO${NC} ] Instalation is Complate "
@@ -180,4 +178,4 @@ for i in {5..1}; do
     echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
     sleep 1
 done
-poweroff
+
