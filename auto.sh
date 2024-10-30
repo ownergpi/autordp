@@ -77,7 +77,7 @@ case "$PILIHOS" in
 	3) PILIHOS=""  IFACE="Ethernet Instance 0";;
 	4) PILIHOS=""  IFACE="Ethernet Instance 0";;
 	5) PILIHOS=""  IFACE="Ethernet Instance 0 2" OS=10;;
-	6) PILIHOS="https://mywget.me/gz/winserver16.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
+	6) PILIHOS="https://mywget.me/gz/win11.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS
 		IFACE="Ethernet Instance 0 2"
 		;;
