@@ -159,11 +159,11 @@ if [ "$OS" -eq 10 ]; then
 	
 
 elif [ "$OS" -eq 11 ]; then
-	sudo ntfsfix /dev/vda3
-	sudo mount /dev/vda3 /tmp/windows
+	sudo ntfsfix /dev/vda2
+	sudo mount /dev/vda2 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup/
 	cp -f /tmp/net.bat net.bat
-
+ 	clear
 else
     sudo ntfsfix /dev/vda1
 	sudo mount /dev/vda1 /tmp/windows
@@ -178,4 +178,4 @@ for i in {5..1}; do
     echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
     sleep 1
 done
-
+poweroff
