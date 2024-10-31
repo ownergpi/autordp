@@ -72,7 +72,7 @@ echo -e ""
 read -p "  Pilih [>] : " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://mywget.me/gz/winserver12.gz"  IFACE="Ethernet" OS=10;;
+	1|"") PILIHOS="https://mywget.me/gz/winserver12.gz"  IFACE="Ethernet" OS=11;;
 	2) PILIHOS="https://mywget.me/gz/winserver16.gz"  IFACE="Ethernet Instance 0";;
 	3) PILIHOS=""  IFACE="Ethernet Instance 0";;
 	4) PILIHOS=""  IFACE="Ethernet Instance 0";;
@@ -156,14 +156,14 @@ if [ "$OS" -eq 10 ]; then
 	sudo mount /dev/vda3 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 	cp -f /tmp/net.bat net.bat
-	
+	clear
 
 elif [ "$OS" -eq 11 ]; then
 	sudo ntfsfix /dev/vda2
 	sudo mount /dev/vda2 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup/
 	cp -f /tmp/net.bat net.bat
- 	clear
+	clear
 else
     sudo ntfsfix /dev/vda1
 	sudo mount /dev/vda1 /tmp/windows
@@ -178,4 +178,3 @@ for i in {5..1}; do
     echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
     sleep 1
 done
-poweroff
